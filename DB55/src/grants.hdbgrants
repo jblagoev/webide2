@@ -1,0 +1,22 @@
+{
+  "SPM_SERVICE_CONNECTION": {
+    "object_owner" : {
+      "object_privileges" : [
+        {
+          "name" : "CS_SALESTRANSACTION",
+          "schema" : "TCMP", 
+          "privileges_with_grant_option" : [ "SELECT","INSERT", "UPDATE","DELETE" ]
+        }
+      ]
+    },
+    "application_user" : {
+      "object_privileges" : [
+        {
+          "name" : "CS_SALESTRANSACTION",
+          "schema" : "TCMP", 
+          "privileges" : [ "SELECT","INSERT", "UPDATE","DELETE" ]
+        }
+      ]
+    }    
+  }
+}	  

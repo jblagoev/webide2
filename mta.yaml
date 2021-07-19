@@ -1,0 +1,31 @@
+ID: DEMO55
+_schema-version: '2.0'
+version: 0.0.1
+
+modules:
+ - name: DB55
+   type: hdb
+   path: DB55
+   requires:
+    - name: hdi_DB55
+
+    - name: cross-container-service-1
+      group: SERVICE_REPLACEMENTS
+
+      properties:
+        key: ServiceName_1
+        service: ~{the-service-name}
+        
+resources:
+ - name: hdi_DB55
+   parameters:
+      config:
+         schema: DB55
+   properties:
+      hdi-container-name: ${service-name}
+   type: com.sap.xs.hdi-container
+ - name: cross-container-service-1
+   parameters:
+      service-name: SPM_SERVICE_CONNECTION 
+   properties:
+      the-service-name: ${service-name}   
